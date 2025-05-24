@@ -1,0 +1,9 @@
+streamlit
+pandas
+aiohttp
+pydantic
+matplotlib
+seaborn
+PyPDF2
+openpyxl
+selenium
