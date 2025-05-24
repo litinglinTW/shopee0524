@@ -33,7 +33,7 @@ st.write("測試 蝦皮main streamlit介面")
 
 st.sidebar.title("📊 導覽選單")
 page = st.sidebar.radio("請選擇頁面", [
-    "登入蝦皮帳號",
+    
     "財報分析",
     "商品留言分析器(api)",
     "補貨建議工具",
@@ -45,15 +45,11 @@ def get_logged_in_driver():
     return st.session_state.get("driver")
 
 
-
-#1
-
-if page == "登入蝦皮帳號":
-    login_page()
+#沒有自動登入功能，會被擋
 
 
 #2
-elif page == "財報分析":
+if page == "財報分析":
     st.title("📈 財報分析頁面")
     st.markdown("請依序上傳以下三個檔案：")
 
