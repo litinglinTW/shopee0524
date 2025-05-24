@@ -52,6 +52,8 @@ logger = logging.getLogger(__name__)
 # ================= 使用說明 =================
 def show_cookie_instructions():
     st.markdown("""
+
+    編輯：20250524 08:41pm
 **如何取得 Shopee Cookie：**
 
 1. 開啟瀏覽器（建議 Chrome），進入 [蝦皮首頁](https://shopee.tw)。
