@@ -52,7 +52,6 @@ logger = logging.getLogger(__name__)
 # ================= 使用說明 =================
 def show_cookie_instructions():
     st.markdown("""
-    (最後編輯：20250524 08:41pm)
     
 **如何取得 Shopee Cookie：**
 
@@ -61,11 +60,9 @@ def show_cookie_instructions():
 3. 登入後，按下鍵盤 `F12` 或點右鍵選「檢查」打開開發者工具。
 4. 點選「Application」（中文可能是「應用程式」）分頁，再點左側「Cookies」展開，選擇 `https://shopee.tw`。
 5. 在右側看到多組 cookie（如 SPC_EC、SPC_U、SPC_F 等），選一組全部複製（可全部 Ctrl+A, Ctrl+C），貼到下方「Cookie」欄位。
-        cookie複製過來的格式：SPC_F=xxxxxx; SPC_U=yyyyyy; SPC_EC=zzzzzz; SPC_R_T_ID=aaaaaa; SPC_R_T_IV=bbbbbb; SPC_T_ID=cccccc; SPC_T_IV=dddddd; ...
-        （可以請AI幫忙檢查複製內容是否符合格式）
 6. 若用 Chrome 擴充套件如 EditThisCookie 也可一鍵複製所有 cookie。
 
-> **警告：** 沒有貼 全新、馬上複製下來的Cookie，基本上跑不動。沒貼的話預設會用內建 Cookie（成功率0.01，因為我的帳號已經被蝦皮偵測到ㄌ）。
+> **備註：** (最後編輯：20250524 08:41pm)嘗試登入被蝦皮擋下
 
 ---
 """, unsafe_allow_html=True)
@@ -318,9 +315,12 @@ def run_review_report():
 
     product_url = st.text_input("請輸入蝦皮商品網址（例如：https://shopee.tw/product/12345678/87654321 或 https://shopee.tw/i.12345678.87654321）")
     cookie = st.text_area(
-        "請輸入 Cookie 字串（建議從瀏覽器複製貼上，熱門商品建議貼 Cookie，否則預設用內建 Cookie，成功率較低）",
+        "請輸入 Cookie 字串（建議從瀏覽器複製貼上，熱門商品建議貼 Cookie，否則預設用內建 Cookie，成功率較低）
+        > **備註：**cookie複製過來的格式：SPC_F=xxxxxx; SPC_U=yyyyyy; SPC_EC=zzzzzz; SPC_R_T_ID=aaaaaa; SPC_R_T_IV=bbbbbb; SPC_T_ID=cccccc; SPC_T_IV=dddddd; ...
+        （可以請AI幫忙檢查複製內容是否符合格式）",
         height=100
     )
+ 
     proxy = st.text_input("代理伺服器 Proxy（格式：http://IP:PORT，非必填）")
     
     cookie = cookie.replace('\n', '').replace('\r', '')
