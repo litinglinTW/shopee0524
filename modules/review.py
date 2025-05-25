@@ -315,9 +315,12 @@ def run_review_report():
 
     product_url = st.text_input("請輸入蝦皮商品網址（例如：https://shopee.tw/product/12345678/87654321 或 https://shopee.tw/i.12345678.87654321）")
     cookie = st.text_area(
-        "請輸入 Cookie 字串（建議從瀏覽器複製貼上，熱門商品建議貼 Cookie，否則預設用內建 Cookie，成功率較低）
-        > **備註：**cookie複製過來的格式：SPC_F=xxxxxx; SPC_U=yyyyyy; SPC_EC=zzzzzz; SPC_R_T_ID=aaaaaa; SPC_R_T_IV=bbbbbb; SPC_T_ID=cccccc; SPC_T_IV=dddddd; ...
-        （可以請AI幫忙檢查複製內容是否符合格式）",
+        label=(
+            "請輸入 Cookie 字串（建議從瀏覽器複製貼上，熱門商品建議貼 Cookie，否則預設用內建 Cookie，成功率較低）\n\n"
+            "> **備註：** Cookie 格式如下：\n"
+            "`SPC_F=xxxxxx; SPC_U=yyyyyy; SPC_EC=zzzzzz; SPC_R_T_ID=aaaaaa; SPC_R_T_IV=bbbbbb; SPC_T_ID=cccccc; SPC_T_IV=dddddd; ...`\n\n"
+            "（可以請 AI 幫忙檢查複製內容是否符合格式）"
+        ),
         height=100
     )
  
