@@ -13,7 +13,7 @@ Created on Sun May 11 10:48:00 2025
 0524 
 10:30am. 複製貼上新的
 04:09pm. 加入商品留言分析器(api)：含有餅乾
-
+0525 18:46
 """
 import streamlit as st
 import pandas as pd
@@ -27,8 +27,7 @@ from modules.review import run_review_report
 
 st.set_page_config(page_title="蝦皮財報分析工具", layout="wide")
 
-st.title('Shopee')
-st.write("測試 蝦皮main streamlit介面")
+st.title('蝦皮賣場管理工具 Shopee Assistant')
 
 
 st.sidebar.title("📊 導覽選單")
@@ -137,7 +136,7 @@ elif page == "自動生成進貨紀錄":
     st.title("📦 自動生成進貨紀錄報表")
     st.markdown("請依序上傳以下三個檔案：")
 
-    purchase_file = st.file_uploader("1. 1688 進貨報表（Excel 或 CSV）", type=["xlsx", "csv"])
+    purchase_file = st.file_uploader("1. 進貨報表（Excel 或 CSV）", type=["xlsx", "csv"])
     template_file = st.file_uploader("2. 進貨紀錄模板（Excel）", type=["xlsx"])
     mapping_file = st.file_uploader("3. 商品對應表 Mapping（Excel）", type=["xlsx"])
 
